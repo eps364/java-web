@@ -1,0 +1,19 @@
+# Emerson Pereira da Silva
+# Arquivo para uso do Docker-compose
+# 2020-05-05
+# docker-compose -f "Docker-compose.yml" up -d --build
+
+version: '3'
+
+services:
+  mysqlsrv:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_DATABASE: "time"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./MySql:/var/lib/mysql
+    
